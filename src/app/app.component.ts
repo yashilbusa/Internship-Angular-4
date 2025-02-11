@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
+import { DemoComponent } from "./demo/demo.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [DemoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular-4';
+
+  inputtext =""
+  onClick(inputele:HTMLInputElement){
+    this.inputtext = inputele.value
+  }
 }
