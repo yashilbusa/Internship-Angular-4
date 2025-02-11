@@ -11,5 +11,6 @@ export class RmDecimalPointDirective {
   @HostListener('input') onInput() {
     let value = this.el.nativeElement.value;
     this.el.nativeElement.value = Math.trunc(value);
+    console.log(value);
   }
 }
