@@ -10,11 +10,14 @@ import { BoxPlaceholderComponent } from "./box-placeholder/box-placeholder.compo
 import { LoaderComponent } from "./loader/loader.component";
 import { ErrorComponent } from "./error/error.component";
 import { DateTimeConverterDirective } from './directives/date-time-converter.directive';
+import { FlCapitalDirective } from './directives/fl-capital.directive';
+import { RmDecimalPointDirective } from './directives/rm-decimal-point.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, BoxTwoComponent, BoxOneComponent, BoxThreeComponent, BoxFourComponent, BoxFiveComponent, BoxPlaceholderComponent, LoaderComponent, ErrorComponent],
+  imports: [CommonModule, BoxTwoComponent, BoxOneComponent, BoxThreeComponent, BoxFourComponent, BoxFiveComponent, BoxPlaceholderComponent, LoaderComponent, ErrorComponent, 
+    DateTimeConverterDirective, FlCapitalDirective, RmDecimalPointDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

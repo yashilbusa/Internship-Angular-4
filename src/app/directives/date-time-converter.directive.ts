@@ -14,7 +14,8 @@ export class DateTimeConverterDirective {
   ngOnInit() {
     const date = new Date(this.dateTime);
 
-    const pstDate = new Date(date.getTime() + (-11 * 60 * 60 * 1000));
+    const pstDate = new Date(date.getTime() + (-8 * 60 * 60 * 1000));
     this.el.nativeElement.textContent = pstDate;
+    console.log(pstDate);
   }
 }

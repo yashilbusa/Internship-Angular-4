@@ -11,5 +11,6 @@ export class FlCapitalDirective {
   @HostListener('input') onInput() {
     let value = this.el.nativeElement.value;
     this.el.nativeElement.value = value.charAt(0).toUpperCase() + value.slice(1);
+    console.log(value);
   }
 }
