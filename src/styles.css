@@ -1,11 +1,11 @@
 .box{
     width:auto;
-    height: 500px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 25px;
     font-weight: bold;
-    color: white;
+    color: black;
     margin: 20px;
 }
