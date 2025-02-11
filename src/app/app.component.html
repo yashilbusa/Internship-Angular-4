@@ -6,11 +6,6 @@
 <button (click)="destroyComponent()">Destroy</button> -->
 
 
-<app-box-one #one></app-box-one>
-<app-box-two></app-box-two>
-<app-box-three></app-box-three>
-<app-box-four></app-box-four>
-
 <!--  @defer(on idle) {}   OR   @defer() {}  -->
 
 <!-- @defer (on timer(3s)) {} -->      
@@ -35,11 +30,17 @@
 <!-- @defer (on interaction; prefetch on timer(3s)) {} -->
 <!-- It will Load content but not display untill we click on box or compoent with prefetch keyword-->
 
-@defer () {
+
+<app-box-one #one></app-box-one>
+<app-box-two></app-box-two>
+<app-box-three></app-box-three>
+<app-box-four></app-box-four>
+
+@defer (on timer(5s)) {
   <app-box-five></app-box-five>
 } @placeholder {
   <app-box-placeholder></app-box-placeholder>
-} @loading (after 1s; minimum 5s){
+} @loading {
   <app-loader></app-loader>
 } 
 @error {
