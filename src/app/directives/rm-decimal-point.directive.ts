@@ -8,7 +8,7 @@ export class RmDecimalPointDirective {
 
   constructor(private el: ElementRef) {}
 
-  @HostListener('input') onInput() {
+  rmDecimal(){
     let value = this.el.nativeElement.value;
     this.el.nativeElement.value = Math.trunc(value);
     console.log(value);
