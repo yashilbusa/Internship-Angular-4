@@ -6,11 +6,14 @@ import { BoxOneComponent } from "./box-one/box-one.component";
 import { BoxThreeComponent } from "./box-three/box-three.component";
 import { BoxFourComponent } from "./box-four/box-four.component";
 import { BoxFiveComponent } from "./box-five/box-five.component";
+import { BoxPlaceholderComponent } from "./box-placeholder/box-placeholder.component";
+import { LoaderComponent } from "./loader/loader.component";
+import { ErrorComponent } from "./error/error.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, BoxTwoComponent, BoxOneComponent, BoxThreeComponent, BoxFourComponent, BoxFiveComponent],
+  imports: [CommonModule, BoxTwoComponent, BoxOneComponent, BoxThreeComponent, BoxFourComponent, BoxFiveComponent, BoxPlaceholderComponent, LoaderComponent, ErrorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -26,5 +29,10 @@ export class AppComponent {
   // destroyComponent(){
   //   this.destroy = false
   // }
+
+  isVisible = false
+  show(){
+    this.isVisible = true
+  }
 
 }

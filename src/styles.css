@@ -1,6 +1,6 @@
 .box{
     width:auto;
-    height: 200px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,3 +9,6 @@
     color: black;
     margin: 20px;
 }
+/* body{
+    background-color:burlywood;
+} */

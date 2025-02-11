@@ -6,8 +6,43 @@
 <button (click)="destroyComponent()">Destroy</button> -->
 
 
-<app-box-one></app-box-one>
+<app-box-one #one></app-box-one>
 <app-box-two></app-box-two>
 <app-box-three></app-box-three>
 <app-box-four></app-box-four>
-<app-box-five></app-box-five>
+
+<!--  @defer(on idle) {}   OR   @defer() {}  -->
+
+<!-- @defer (on timer(3s)) {} -->      
+<!-- After 3 second box five appear till placholder box appear-->
+
+<!-- @defer (on interaction(one)) {}  -->
+<!-- When We Click box one it replace the placholder box eith five box on interaction we pass template variable-->
+
+<!-- @defer (on hover) {} -->
+<!-- When I hover my mouse to placholder block it replace with box five and we can also pass teplate variable -->
+<!-- @defer (on hover(one)) -->
+
+<!-- @defer (on immediate) {} -->
+<!-- It Immediate Load Component -->
+
+<!-- @defer (on viewport) {} -->
+<!-- When We Scroll and on window it automatically load box five -->
+
+<!-- @defer (when isVisible) {} -->
+<!-- When Condition is True then and then it will display the component -->
+
+<!-- @defer (on interaction; prefetch on timer(3s)) {} -->
+<!-- It will Load content but not display untill we click on box or compoent with prefetch keyword-->
+
+@defer () {
+  <app-box-five></app-box-five>
+} @placeholder {
+  <app-box-placeholder></app-box-placeholder>
+} @loading (after 1s; minimum 5s){
+  <app-loader></app-loader>
+} @error {
+  <app-error></app-error>
+}
+
+<button (click)="show()">Click</button>
