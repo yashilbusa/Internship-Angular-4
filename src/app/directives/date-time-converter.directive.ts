@@ -8,14 +8,15 @@ import { Directive, ElementRef, Input } from '@angular/core';
 export class DateTimeConverterDirective {
 
   @Input() dateTime!: string | Date ;
-  date: any;
 
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
-    const date = new Date();
-    const updatedate = new Date(this.date.getTime()+330*60000);
-    this.el.nativeElement.textContent = updatedate;
-    console.log(updatedate);
+    const date = new Date(this.dateTime);
+
+    const pstDate = new Date(date.getTime() + (-11 * 60 * 60 * 1000));
+
+    const formattedDate = formatDate(pstDate, 'yyyy-MM-dd HH:mm:ss', 'en-US');
+    this.el.nativeElement.textContent = formattedDate;
   }
 }

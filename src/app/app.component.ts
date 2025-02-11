@@ -9,6 +9,7 @@ import { BoxFiveComponent } from "./box-five/box-five.component";
 import { BoxPlaceholderComponent } from "./box-placeholder/box-placeholder.component";
 import { LoaderComponent } from "./loader/loader.component";
 import { ErrorComponent } from "./error/error.component";
+import { DateTimeConverterDirective } from './directives/date-time-converter.directive';
 
 @Component({
   selector: 'app-root',
