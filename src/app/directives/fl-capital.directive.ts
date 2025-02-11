@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appFlCapital]',
@@ -6,6 +6,10 @@ import { Directive } from '@angular/core';
 })
 export class FlCapitalDirective {
 
-  constructor() { }
+  constructor(private el: ElementRef) {}
 
+  @HostListener('input') onInput() {
+    let value = this.el.nativeElement.value;
+    this.el.nativeElement.value = value.charAt(0).toUpperCase() + value.slice(1);
+  }
 }
