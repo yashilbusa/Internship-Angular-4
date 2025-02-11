@@ -1,10 +1,10 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[appFilter]',
+  selector: '[appRmDecimalPoint]',
   standalone: true
 })
-export class FilterDirective {
+export class RmDecimalPointDirective {
 
   constructor() { }
 
