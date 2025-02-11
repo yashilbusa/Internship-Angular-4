@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-demo',
@@ -7,6 +7,17 @@ import { Component, Input } from '@angular/core';
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.css'
 })
-export class DemoComponent {
+
+export class DemoComponent implements OnInit{
   @Input() value = "Yashil Busa" 
+
+  constructor(){ 
+    console.log("Constructor Called!!!"); 
+    console.log(this.value);
+  }
+
+  ngOnInit() {
+    console.log("ngOnInit Called!!!");
+    console.log(this.value);
+  }
 }
