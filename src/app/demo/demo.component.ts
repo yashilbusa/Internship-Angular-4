@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-demo',
@@ -8,7 +8,9 @@ import { AfterContentInit, Component, DoCheck, Input, OnChanges, OnInit, SimpleC
   styleUrl: './demo.component.css'
 })
 
-export class DemoComponent implements OnInit, OnChanges, DoCheck, AfterContentInit{
+export class DemoComponent implements OnInit, OnChanges, DoCheck, 
+AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
+  
   @Input() value = "Yashil Busa" 
 
   constructor(){ 
@@ -39,6 +41,30 @@ export class DemoComponent implements OnInit, OnChanges, DoCheck, AfterContentIn
   ngAfterContentInit() {
     //Called after ngOnInit when the component's or directive's content has been initialized.
     //Add 'implements AfterContentInit' to the class.
-    
+    console.log("ngAfterContentInit Called!!!");
+  }
+
+  ngAfterContentChecked() {
+    //Called after every check of the component's or directive's content.
+    //Add 'implements AfterContentChecked' to the class.
+    console.log("ngAfterContentChecked Called!!!");    
+  }
+
+  ngAfterViewInit(){
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    console.log("ngAfterViewInit Called!!!");    
+  }
+
+  ngAfterViewChecked() {
+    //Called after every check of the component's view. Applies to components only.
+    //Add 'implements AfterViewChecked' to the class.
+    console.log("ngAfterViewChecked Called!!!");    
+  }
+
+  ngOnDestroy() {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    console.log("ngOnDestroy Called!!!");   
   }
 }

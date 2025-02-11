@@ -1,3 +1,6 @@
 <input type="text" #input>
 <button (click)="onClick(input)">Get Value</button>
-<app-demo [value]="inputtext"></app-demo>
+<app-demo [value]="inputtext" *ngIf="destroy">
+  <h4>This is Projected Content : {{ inputtext }}</h4>  
+</app-demo>
+<button (click)="destroyComponent()">Destroy</button>
