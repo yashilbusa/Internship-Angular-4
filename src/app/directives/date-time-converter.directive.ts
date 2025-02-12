@@ -13,10 +13,10 @@ export class DateTimeConverterDirective {
   constructor(private el: ElementRef) {}
 
   @HostListener('input') onInput(){
-    let date :string = this.el.nativeElement.value
-    let update:Date = new Date(date)
+    let date = this.el.nativeElement.value
+    let update = new Date(date)
     
-    let value:any = update.toLocaleString("en-US", {
+    let value = update.toLocaleString("en-US", {
     timeZone: "America/Los_Angeles"
     }) 
 
