@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
   selector: '[appFlCapital]',
@@ -6,11 +6,13 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class FlCapitalDirective {
 
+  @Output() capitalFirstWord = new EventEmitter()
   constructor(private el: ElementRef) {}
 
   @HostListener('input') onInput() {
     let value = this.el.nativeElement.value;
-    this.el.nativeElement.value = value.charAt(0).toUpperCase() + value.slice(1);
-    console.log(value);
+    value = value.charAt(0).toUpperCase() + value.slice(1);
+    this.capitalFirstWord.emit(value)
   }
+
 }

@@ -23,7 +23,10 @@ import { RmDecimalPointDirective } from './directives/rm-decimal-point.directive
 })
 export class AppComponent {
 
-  updateDate :any = ""
+  updateDate :any 
+  wordCapital :any 
+  removeDecimal :any
+
 
   // inputtext =""
   // destroy = true
@@ -41,4 +44,15 @@ export class AppComponent {
     this.isVisible = true
   }
 
+  dateChange(value:any){
+    this.updateDate = value
+  }
+
+  capitalWord(value:any){
+    this.wordCapital = value
+  }
+
+  rmDecimal(value:any){
+    this.removeDecimal = value
+  }
 }

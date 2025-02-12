@@ -49,17 +49,20 @@
 
 <button (click)="show()">Click</button>
 
+
 <hr>
 <h2>Date Time Converter Directive</h2>
-<input type="datetime-local" appDateTimeConverter>
-<p>PST Date & Time is </p>
+<input type="datetime-local" appDateTimeConverter (dateTimeChanged)="dateChange($event)">
+<p>PST Date & Time is : {{ updateDate }}</p>
 
 
 <hr>
 <h2>Capital First Letter Directive</h2>
-<input type="text" appFlCapital>
+<input type="text" appFlCapital (capitalFirstWord)="capitalWord($event)">
+<p>Enter Text is : {{ wordCapital }}</p>
 
 
 <hr>
 <h2>Remove Decimal Point Directive</h2>
-<input type="number" appRmDecimalPoint>
+<input type="number" appRmDecimalPoint (removeDecimalPoint)="rmDecimal($event)">
+<p>Value After Remove Decimal : {{ removeDecimal }}</p>

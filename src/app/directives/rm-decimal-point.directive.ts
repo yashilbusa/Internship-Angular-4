@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
   selector: '[appRmDecimalPoint]',
@@ -6,11 +6,12 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class RmDecimalPointDirective {
 
+  @Output() removeDecimalPoint = new EventEmitter()
   constructor(private el: ElementRef) {}
 
   @HostListener('input') onInput() {
     let value = this.el.nativeElement.value;
     value = Math.trunc(value);
-    console.log(value);
+    this.removeDecimalPoint.emit(value)
   }
 }

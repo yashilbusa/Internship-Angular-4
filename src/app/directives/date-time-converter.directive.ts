@@ -9,7 +9,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from
 export class DateTimeConverterDirective {
 
   @Input() inputDateTime: string = '';  
-  @Output() dateTimeChanged = new EventEmitter<string>(); 
+  @Output() dateTimeChanged = new EventEmitter(); 
 
   constructor(private el: ElementRef) {}
 
