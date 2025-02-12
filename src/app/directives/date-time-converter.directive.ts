@@ -8,7 +8,6 @@ import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from
 
 export class DateTimeConverterDirective {
 
-  @Input() inputDateTime: string = '';  
   @Output() dateTimeChanged = new EventEmitter(); 
 
   constructor(private el: ElementRef) {}
@@ -20,8 +19,6 @@ export class DateTimeConverterDirective {
     let value = update.toLocaleString("en-US", {
     timeZone: "America/Los_Angeles"
     }) 
-    console.log(value);
-
     this.dateTimeChanged.emit(value);
   }
 }
