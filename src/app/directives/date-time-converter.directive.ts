@@ -7,15 +7,25 @@ import { Directive, ElementRef, Input } from '@angular/core';
 })
 export class DateTimeConverterDirective {
 
-  @Input() dateTime!: string | Date ;
+  @Input() inputDateTime: string = '';  
 
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
-    const date = new Date(this.dateTime);
+    if (this.inputDateTime) {
+      const convertedTime = this.convertToPST(this.inputDateTime);
+      this.el.nativeElement.textContent = convertedTime;  
+    }
+  }
 
-    const pstDate = new Date(date.getTime() + (-8 * 60 * 60 * 1000));
-    this.el.nativeElement.textContent = pstDate;
-    console.log(pstDate);
+  convertToPST(dateTimeStr: string): string {
+    const dateTime = new Date(dateTimeStr);  
+    const options = {
+      timeZone: 'America/Los_Angeles',  
+      hour12: true,                    
+    };
+
+    const pstTime = dateTime.toLocaleString('en-US', options);
+    return pstTime;
   }
 }
