@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
   selector: '[appDateTimeConverter]',
@@ -9,6 +9,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class DateTimeConverterDirective {
 
   @Input() inputDateTime: string = '';  
+  @Output() dateTimeChanged = new EventEmitter<string>(); 
 
   constructor(private el: ElementRef) {}
 
@@ -20,5 +21,7 @@ export class DateTimeConverterDirective {
     timeZone: "America/Los_Angeles"
     }) 
     console.log(value);
+
+    this.dateTimeChanged.emit(value);
   }
 }

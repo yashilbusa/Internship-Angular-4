@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 // import { DemoComponent } from "./demo/demo.component";
 import { CommonModule } from '@angular/common';
 import { BoxTwoComponent } from "./box-two/box-two.component";
@@ -23,6 +23,8 @@ import { RmDecimalPointDirective } from './directives/rm-decimal-point.directive
 })
 export class AppComponent {
 
+  updateDate :any = ""
+
   // inputtext =""
   // destroy = true
 
@@ -38,4 +40,5 @@ export class AppComponent {
   show(){
     this.isVisible = true
   }
+
 }
