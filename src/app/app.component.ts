@@ -27,7 +27,6 @@ export class AppComponent {
   wordCapital :any 
   removeDecimal :any
 
-
   // inputtext =""
   // destroy = true
 
