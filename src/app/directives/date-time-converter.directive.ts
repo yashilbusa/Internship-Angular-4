@@ -19,7 +19,6 @@ export class DateTimeConverterDirective {
     let value = update.toLocaleString("en-US", {
     timeZone: "America/Los_Angeles"
     }) 
-
     console.log(value);
   }
 }
