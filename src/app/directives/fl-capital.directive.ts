@@ -14,5 +14,4 @@ export class FlCapitalDirective {
     value = value.charAt(0).toUpperCase() + value.slice(1);
     this.capitalFirstWord.emit(value)
   }
-
 }
